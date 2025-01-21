@@ -1,4 +1,6 @@
 #include "problems.hpp"
+#include <algorithm>
+#include <string>
 
 std::vector<int> Solution::twoSum(std::vector<int> &nums, int target) {
   std::vector<int> ids;
@@ -30,7 +32,18 @@ bool Solution::isPalindrome(int x) {
   return x == result;
 }
 
-int main(int argc, char **argv) {
-  Solution solution;
-  return 0;
+std::string Solution::longestCommonPrefix(std::vector<std::string> &strs) {
+  std::sort(strs.begin(), strs.end());
+  std::string first = strs.front();
+  std::string last = strs.back();
+
+  int min_length = std::min(first.size(), last.size());
+  int id = 0;
+
+  while (id < min_length && first[id] == last[id]) {
+    id++;
+  }
+  return first.substr(0, id);
 }
+
+int main(int argc, char **argv) { return 0; }

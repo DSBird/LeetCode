@@ -4,6 +4,7 @@
 
 class Solution {
 public:
-  std::vector<int> twoSum(std::vector<int> &nums, int target);
-  bool isPalindrome(int x);
+  static std::vector<int> twoSum(std::vector<int> &nums, int target);
+  static bool isPalindrome(int x);
+  static std::string longestCommonPrefix(std::vector<std::string> &strs);
 };
